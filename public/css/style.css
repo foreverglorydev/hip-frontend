@@ -1430,6 +1430,11 @@ select:focus {
     padding-top: 62px;
 }
 
+.connect-wallet {
+    margin-top: 50px;
+    text-align: center;
+}
+
 .mint-row{
     margin-top: 50px;
     display: flex;
