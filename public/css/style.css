@@ -1430,6 +1430,32 @@ select:focus {
     padding-top: 62px;
 }
 
+.mint-row{
+    margin-top: 50px;
+    display: flex;
+}
+
+.mint-col {
+    align-self: center;
+    text-align: center;
+}
+
+.mint-amount-col {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 23%;
+}
+
+.mint-amount-input {
+    width: 50% !important;
+    font-size: 30px !important;
+}
+
+.mint-number-button {
+    margin-left: 5px;
+}
+
 .line-up {
     position: relative;
 }
@@ -1931,6 +1957,7 @@ html.open-nav{
 .mint-image {
     text-align: center;
     padding-top: 26px;
+    margin-bottom: 20px;
 }
 
 .mint-image img {

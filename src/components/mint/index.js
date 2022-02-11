@@ -36,21 +36,21 @@ class NftMint extends React.Component {
                     <h2 className="splitAnim" data-aos="fade-up" data-aos-duration="2000">NFT Mint</h2>
                 </div>
                 <div className="nftmint-list" data-aos="fade-up" data-aos-duration="2000">
-                    <Row style={{marginTop:"50px", display:"flex"}}>
+                    <Row className="mint-row">
                         <Col lg={5}>
-                            <div className="mint-image" data-aos="fade-right" data-aos-duration="2000" style={{marginBottom:"20px"}}>
+                            <div className="mint-image" data-aos="fade-right" data-aos-duration="2000">
                                 <img src={NftImage} className="img-fluid" alt="" />
                             </div>
                         </Col>
                         <Col lg={1}></Col>
-                        <Col lg={3} style={{alignSelf:"center", textAlign:"center"}}>
-                            <div style={{display:"inline-flex", alignItems:"center", marginBottom:"20px", marginLeft:"23%"}}>
-                                <input type="number" pattern="[0-9]*" value={this.state.value} min={1} disabled style={{width:"50%", fontSize:"30px"}} />
-                                <Button variant="success" style={{marginLeft:"5px"}} onClick={this.addMintNumber}> + </Button>
-                                <Button variant="success" style={{marginLeft:"5px"}} onClick={this.subMintNumber}> - </Button>
+                        <Col lg={3} className="mint-col">
+                            <div className="mint-amount-col">
+                                <input className="mint-amount-input" type="number" pattern="[0-9]*" value={this.state.value} min={1} disabled />
+                                <Button variant="success" className="mint-number-button" onClick={this.addMintNumber}> + </Button>
+                                <Button variant="success" className="mint-number-button" onClick={this.subMintNumber}> - </Button>
                             </div>
                         </Col>
-                        <Col lg={3} style={{alignSelf:"center", textAlign:"center", marginBottom:"20px"}}>
+                        <Col lg={3} className="mint-col" style={{marginBottom:"20px"}}>
                             <Button variant="success">Mint Now</Button>
                         </Col>
                     </Row>
