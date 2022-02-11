@@ -1456,6 +1456,7 @@ select:focus {
     width: 50% !important;
     font-size: 30px !important;
     margin-left: 6px;
+    text-align: center;
 }
 
 .mint-number-button {
