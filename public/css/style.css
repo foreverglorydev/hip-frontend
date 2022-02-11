@@ -946,6 +946,32 @@ select:focus {
     right: 0;
 }
 
+.mint {
+    position: relative;
+    padding: 400px 0 76px;
+}
+
+.mint .container {
+    position: relative;
+    z-index: 99;
+}
+
+.mint-content p {
+    font-size: 14px;
+}
+
+.mint-content .btn-pap {
+    margin-top: 16px;
+}
+
+.mint-image {
+    text-align: right;
+}
+
+.mint-image img {
+    display: inline-block;
+}
+
 .color-globe-image {
     position: absolute;
     bottom: -250px;
@@ -1183,6 +1209,10 @@ select:focus {
 
 .artist-list .slick-slide {
     padding: 0 15px;
+}
+
+.nftmint {
+    margin-top: 250px;
 }
 
 .slick-dots li {
@@ -1892,6 +1922,21 @@ html.open-nav{
 .about-image img {
     width: 300px;
 }
+
+.mint {
+    padding: 84px 0 48px;
+    text-align: center;
+}
+
+.mint-image {
+    text-align: center;
+    padding-top: 26px;
+}
+
+.mint-image img {
+    width: 300px;
+}
+
 .artist-list::before,
 .artist-list::after {
     width: 120px;
@@ -2011,6 +2056,11 @@ html.open-nav{
     }
 
     .about {
+        padding: 44px 0 32px;
+        text-align: center;
+    }
+
+    .mint {
         padding: 44px 0 32px;
         text-align: center;
     }

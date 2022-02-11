@@ -22,8 +22,9 @@ const settings = {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 3000,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
     adaptiveHeight: true,
     mobileFirst: true,
     responsive: [
@@ -35,8 +36,9 @@ const settings = {
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                autoplay: false,
-                autoplaySpeed: 3000,
+                autoplay: true,
+                speed: 2000,
+                autoplaySpeed: 2000,
                 adaptiveHeight: true,
             }
         }

@@ -104,14 +104,14 @@ jQuery(document).ready(function ($) {
         var scrollPos = $(document).scrollTop() + 160;
         $('.navbar-nav > li > a').each(function () {
             var currLink = $(this);
-            var refElement = $(currLink.attr("href"));
-            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                $('.navbar-nav > li').removeClass("current-menu-item");
-                currLink.parent('li').addClass("current-menu-item");
-            }
-            else {
-                currLink.parent('li').removeClass("current-menu-item");
-            }
+            // var refElement = $(currLink.attr("href"));
+            // if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            //     $('.navbar-nav > li').removeClass("current-menu-item");
+            //     currLink.parent('li').addClass("current-menu-item");
+            // }
+            // else {
+            //     currLink.parent('li').removeClass("current-menu-item");
+            // }
         });
     }
 
