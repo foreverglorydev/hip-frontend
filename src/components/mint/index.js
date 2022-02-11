@@ -10,7 +10,7 @@ class NftMint extends React.Component {
     constructor(props) {
         super(props);
         this.addMintNumber = this.addMintNumber.bind(this);
-        // this.subMintNumber = this.subMintNumber.bind(this);
+        this.subMintNumber = this.subMintNumber.bind(this);
         // Set initial state (ONLY ALLOWED IN CONSTRUCTOR)
         this.state = {
             value: 3
@@ -22,13 +22,13 @@ class NftMint extends React.Component {
         this.setState({value : mintNum});
     }
 
-    // subMintNumber (e) {
-    //     let mintNum = this.state.value - 1;
-    //     if (mintNum < 1) {
-    //         mintNum = 1;
-    //     }
-    //     this.setState({value : mintNum});
-    // }
+    subMintNumber (e) {
+        let mintNum = this.state.value - 1;
+        if (mintNum < 1) {
+            mintNum = 1;
+        }
+        this.setState({value : mintNum});
+    }
     
     render() {
         return (
@@ -48,9 +48,9 @@ class NftMint extends React.Component {
                         <Col lg={1}></Col>
                         <Col lg={3} className="mint-col">
                             <div className="mint-amount-col">
+                                <Button variant="success" className="mint-number-button" onClick={this.subMintNumber}> - </Button>
                                 <input className="mint-amount-input" type="number" pattern="[0-9]*" value={this.state.value} min={1} disabled />
                                 <Button variant="success" className="mint-number-button" onClick={this.addMintNumber}> + </Button>
-                                {/* <Button variant="success" className="mint-number-button" onClick={this.subMintNumber}> - </Button> */}
                             </div>
                         </Col>
                         <Col lg={3} className="mint-col" style={{marginBottom:"20px"}}>

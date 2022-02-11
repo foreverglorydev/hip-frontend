@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import NftMint from "../../components/mint";
+import Banner from "../../components/banner";
 
 AOS.init();
 
@@ -13,6 +14,7 @@ function Mint() {
             <header className="page-header">
                 <Header />
             </header>
+            <Banner />
             <section className="mint">
                 <NftMint />
             </section>
