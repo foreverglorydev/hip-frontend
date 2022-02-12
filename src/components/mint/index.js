@@ -47,6 +47,11 @@ class MintNFT extends React.Component {
             const accounts = await provider.listAccounts();
             if (accounts.length > 0) {
                 // var account = accounts[0];
+                const { chainId } = await provider.getNetwork();
+                if (chainId != 0x4) {
+                    alert("Please change network to rinkby");
+                    return;
+                }
                 this.setState({mintState : false});
 
                 const signer = provider.getSigner();
@@ -63,7 +68,7 @@ class MintNFT extends React.Component {
                     const obj = { user : accounts[0], tokenId : tokenID};
                     data.push(obj);
                 }
-                console.log("mint data : ", data);
+                // console.log("mint data : ", data);
 
                 const mintFee = await DiversifyNFTSalesContract.fee();
                 // console.log("fee : ", ethers.utils.formatEther(mintFee));

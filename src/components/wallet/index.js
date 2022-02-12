@@ -22,6 +22,7 @@ class Wallet extends React.Component {
             if (accounts.length > 0) {
                 this.setState({address : accounts[0], buttonText: "Connected", connected: true});
             }
+
         } else {
             alert("Please install Metamask!");
         }
