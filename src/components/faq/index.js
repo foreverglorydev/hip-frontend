@@ -36,7 +36,7 @@ function Faq() {
           FaqData.map((item, index) => (
             <div key={index} className="js-accordion" data-aos="fade-up" data-aos-duration="3000">
               <SlideToggle
-                duration={1000}
+                duration={500}
                 collapsed={true}
                 whenReversedUseBackwardEase={false}
                 render={({ toggle, setCollapsibleElement }) => (
