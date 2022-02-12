@@ -36,7 +36,7 @@ class Wallet extends React.Component {
     
         try {
             await window.ethereum.enable();
-            var provider = new ethers.providers.Web3Provider(web3.currentProvider);
+            var provider = new ethers.providers.Web3Provider(window.ethereum);
             const accounts = await provider.listAccounts();
             this.setState({address : accounts[0], buttonText: "Connected", connected: true});
         } catch (err) {
