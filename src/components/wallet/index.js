@@ -24,19 +24,20 @@ class Wallet extends React.Component {
             }
 
         } else {
-            alert("Please install Metamask!");
+            alert("Please install Metamask or Trust wallet!");
         }
     }
 
     connectWalletHandler = async () => {
-        const { ethereum } = window;
+        // const { ethereum } = window;
         if (!window.ethereum) {
-            alert("Please install Metamask!");
+            alert("Please install Metamask or Trust wallet!");
         }
     
         try {
             await window.ethereum.enable();
-            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            var provider = new ethers.providers.Web3Provider(web3.currentProvider);
+            const accounts = await provider.listAccounts();
             this.setState({address : accounts[0], buttonText: "Connected", connected: true});
         } catch (err) {
             console.log(err)
