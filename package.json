@@ -7,6 +7,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
+    "ethers": "^5.5.4",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
     "react-dom": "^17.0.2",
@@ -39,5 +40,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "crypto": "^1.0.1",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "os": "^0.1.2",
+    "stream": "0.0.2",
+    "url": "^0.11.0",
+    "web3": "^1.7.0"
   }
 }

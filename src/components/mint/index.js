@@ -1,11 +1,17 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { ethers } from "ethers";
 
 import Wallet from "../../components/wallet";
+import DiversifyNFT from "../../contracts/DiversifyNFT.json";
+import DiversifyNFTSales from "../../contracts/DiversifyNFTSales.json";
 
 const NftImage = '/images/PicsArt_01-20-04.44.33.png';
 
-class NftMint extends React.Component {
+const NFTAddress = "0xCc48a3ECB6c671eb4eEBBeBE000802D4C15796f6";
+const NFTSaleAddress = "0xB48bceaAF3bF8aB9C5517518aF0dCc21F81790cE";
+
+class MintNFT extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,6 +25,9 @@ class NftMint extends React.Component {
 
     addMintNumber (e) {
         let mintNum = this.state.value + 1;
+        if (mintNum > 5) {
+            mintNum = 5;
+        }
         this.setState({value : mintNum});
     }
 
@@ -28,6 +37,27 @@ class NftMint extends React.Component {
             mintNum = 1;
         }
         this.setState({value : mintNum});
+    }
+
+    mintNFT = async() => {
+        const { ethereum } = window;
+        if (ethereum) {
+            var provider = new ethers.providers.Web3Provider(ethereum);
+            const accounts = await provider.listAccounts();
+            if (accounts.length > 0) {
+                // var account = accounts[0];
+                const signer = provider.getSigner();
+                const DiversifyNFTContract = new ethers.Contract(NFTAddress, DiversifyNFT, signer);
+                const DiversifyNFTSalesContract = new ethers.Contract(NFTSaleAddress, DiversifyNFTSales, signer);
+
+                // let totalSupply = await DiversifyNFTContract.totalSupply;
+                // alert(ethers.utils.formatEther(totalSupply));
+            } else {
+                alert("Please connect wallet");
+            }
+        } else {
+            alert("Please install Metamask!");
+        }
     }
     
     render() {
@@ -54,7 +84,7 @@ class NftMint extends React.Component {
                             </div>
                         </Col>
                         <Col lg={3} className="mint-col" style={{marginBottom:"20px"}}>
-                            <Button variant="success">Mint Now</Button>
+                            <Button variant="success" onClick={this.mintNFT}>Mint Now</Button>
                         </Col>
                     </Row>
                 </div>
@@ -63,4 +93,4 @@ class NftMint extends React.Component {
     }
 }
 
-export default NftMint;
+export default MintNFT;

@@ -3,7 +3,7 @@ import 'aos/dist/aos.css';
 
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import NftMint from "../../components/mint";
+import MintNFT from "../../components/mint";
 import Banner from "../../components/banner";
 
 AOS.init();
@@ -16,7 +16,7 @@ function Mint() {
             </header>
             <Banner />
             <section className="mint">
-                <NftMint />
+                <MintNFT />
             </section>
             <div className="section-seperater right"></div>
             <footer className="page-footer">
