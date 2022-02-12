@@ -822,6 +822,7 @@ select:focus {
     width: 100%;
     max-width: 800px;
     margin: 182px 0 0 220px;
+    text-align: center;
 }
 
 .title-banner {
