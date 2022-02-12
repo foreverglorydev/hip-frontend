@@ -19,7 +19,8 @@ class MintNFT extends React.Component {
         this.subMintNumber = this.subMintNumber.bind(this);
         // Set initial state (ONLY ALLOWED IN CONSTRUCTOR)
         this.state = {
-            value: 3
+            value: 3,
+            mintState: true
         };
     }
 
@@ -46,18 +47,42 @@ class MintNFT extends React.Component {
             const accounts = await provider.listAccounts();
             if (accounts.length > 0) {
                 // var account = accounts[0];
-                const signer = provider.getSigner();
-                const DiversifyNFTContract = new ethers.Contract(NFTAddress, DiversifyNFT, signer);
-                const DiversifyNFTSalesContract = new ethers.Contract(NFTSaleAddress, DiversifyNFTSales, signer);
+                this.setState({mintState : false});
 
-                // let totalSupply = await DiversifyNFTContract.totalSupply;
-                // alert(ethers.utils.formatEther(totalSupply));
+                const signer = provider.getSigner();
+                const DiversifyNFTContract = new ethers.Contract(NFTAddress, DiversifyNFT.abi, signer);
+                const DiversifyNFTSalesContract = new ethers.Contract(NFTSaleAddress, DiversifyNFTSales.abi, signer);
+
+                const result = await DiversifyNFTContract.totalSupply();
+                const totalSupply = result.toNumber();
+                // console.log("totalSupply : ", totalSupply);
+
+                let data = [];
+                for(var n = 0; n < this.state.value; n++) {
+                    const tokenID = totalSupply + n;
+                    const obj = { user : accounts[0], tokenId : tokenID};
+                    data.push(obj);
+                }
+                console.log("mint data : ", data);
+
+                const mintFee = await DiversifyNFTSalesContract.fee();
+                // console.log("fee : ", ethers.utils.formatEther(mintFee));
+
+                await DiversifyNFTSalesContract.mint(data, {value: mintFee});
+
+                alert("NFt minting successed!");
+
+                // const mintResult = await DiversifyNFTSalesContract.minted();
+                // console.log("minted : ", mintResult.toNumber());
+
             } else {
                 alert("Please connect wallet");
             }
         } else {
             alert("Please install Metamask!");
         }
+
+        this.setState({mintState : true});
     }
     
     render() {
@@ -84,7 +109,7 @@ class MintNFT extends React.Component {
                             </div>
                         </Col>
                         <Col lg={3} className="mint-col" style={{marginBottom:"20px"}}>
-                            <Button variant="success" onClick={this.mintNFT}>Mint Now</Button>
+                            <Button variant="success" onClick={this.mintNFT} disabled={!this.state.mintState}>Mint Now</Button>
                         </Col>
                     </Row>
                 </div>
