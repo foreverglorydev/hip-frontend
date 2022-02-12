@@ -48,7 +48,7 @@ class MintNFT extends React.Component {
             if (accounts.length > 0) {
                 // var account = accounts[0];
                 const { chainId } = await provider.getNetwork();
-                if (chainId != 0x4) {
+                if (chainId !== 0x4) {
                     alert("Please change network to rinkby");
                     return;
                 }
