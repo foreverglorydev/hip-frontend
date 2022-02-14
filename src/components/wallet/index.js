@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { ethers } from "ethers";
+// import WalletConnect from "walletconnect";
 
 class Wallet extends React.Component {
 
@@ -16,22 +17,24 @@ class Wallet extends React.Component {
 
     componentDidMount =async()  =>{
         const { ethereum } = window;
+        // console.log(window.web3);
         if (ethereum) {
             var provider = new ethers.providers.Web3Provider(ethereum);
             const accounts = await provider.listAccounts();
             if (accounts.length > 0) {
+                await window.ethereum.enable();
                 this.setState({address : accounts[0], buttonText: "Connected", connected: true});
             }
 
         } else {
-            alert("Please install Metamask or Trust wallet!");
+            alert("Please install Metamask or trust wallet!");
         }
     }
 
     connectWalletHandler = async () => {
         // const { ethereum } = window;
         if (!window.ethereum) {
-            alert("Please install Metamask or Trust wallet!");
+            alert("Please install Metamask or trust wallet!");
         }
     
         try {

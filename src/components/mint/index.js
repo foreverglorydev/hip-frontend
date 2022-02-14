@@ -49,7 +49,7 @@ class MintNFT extends React.Component {
                 // var account = accounts[0];
                 const { chainId } = await provider.getNetwork();
                 if (chainId !== 0x4) {
-                    alert("Please change network to rinkby");
+                    alert("Please change the network to rinkby");
                     return;
                 }
                 this.setState({mintState : false});
@@ -81,7 +81,7 @@ class MintNFT extends React.Component {
                 // console.log("minted : ", mintResult.toNumber());
 
             } else {
-                alert("Please connect wallet");
+                alert("Please connect the wallet");
             }
         } else {
             alert("Please install Metamask!");
