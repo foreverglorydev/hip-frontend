@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 const Twitter = 'images/twitter.png';
+const Telegram = 'images/telegram.png';
 
 function Footer() {
     return (
@@ -14,10 +15,10 @@ function Footer() {
                     </div>
                     <div className="social-media">
                         <Link to="https://twitter.com/HipAssApe" target="_blank">
-                            <img src={Twitter} className="img-fluid" data-aos="fade-up" data-aos-duration="2000" alt="" />
+                            <img src={Twitter} style = {{width:'54px'}} className="img-fluid" data-aos="fade-up" data-aos-duration="2000" alt="" />
                         </Link>
                         <Link to="https://twitter.com/BoredJessi" target="_blank">
-                            <img src={Twitter} className="img-fluid" data-aos="fade-up" data-aos-duration="2000" alt="" />
+                            <img src={Telegram} style = {{width:'54px'}} className="img-fluid" data-aos="fade-up" data-aos-duration="2000" alt="" />
                         </Link>
                     </div>
                 </div>

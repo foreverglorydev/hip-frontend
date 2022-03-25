@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ethers } from "ethers";
 
-import Wallet from "../../components/wallet";
 import DiversifyNFT from "../../contracts/DiversifyNFT.json";
 import DiversifyNFTSales from "../../contracts/DiversifyNFTSales.json";
 
@@ -98,7 +97,6 @@ class MintNFT extends React.Component {
                     <h2 className="splitAnim" data-aos="fade-up" data-aos-duration="2000">NFT Mint</h2>
                 </div>
                 <div className="nftmint-list" data-aos="fade-up" data-aos-duration="2000">
-                    <Wallet />
                     <Row className="mint-row">
                         <Col lg={5}>
                             <div className="mint-image" data-aos="fade-right" data-aos-duration="2000">
