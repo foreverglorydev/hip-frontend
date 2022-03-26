@@ -36,7 +36,7 @@ const WalletConnect = () => {
   }
 
   const walletDisconnect = async () => {
-    console.log('asd')
+    deactivate();
   }
 
   const afterOpenModal = () => {
@@ -50,7 +50,7 @@ const WalletConnect = () => {
 
   const handleLogin = (wname) => {
     if (wname === 'Wallet Connect') { 
-      console.log('asdad');
+      console.log(walletconnector)
       activate(walletconnector)
     } else if (wname === 'Binance Wallet') {
       activate(bsc)
@@ -69,7 +69,7 @@ const WalletConnect = () => {
           </div>
         ) : (
           <div className="connect-wallet" onClick={walletDisconnect}>
-            {account.slice(5)}
+            {account.slice(0, 5) + '...' + account.slice(account.length-4, account.length)}
           </div>
         )}
       </Container>
