@@ -3,6 +3,7 @@ import { Container, Button } from 'react-bootstrap';
 import { ethers } from "ethers";
 // import WalletConnect from "walletconnect";
 
+
 class Wallet extends React.Component {
 
     constructor(props) {
@@ -25,7 +26,6 @@ class Wallet extends React.Component {
                 await window.ethereum.enable();
                 this.setState({address : accounts[0], buttonText: accounts[0], connected: true});
             }
-
         } else {
             alert("Please install Metamask or trust wallet!");
         }

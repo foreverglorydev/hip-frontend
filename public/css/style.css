@@ -609,7 +609,7 @@ select:focus {
 .page-header {
     width: 100%;
     position: absolute;
-    z-index: 999999;
+    z-index: 999;
     top: 0;
     left: 0;
     background: transparent;
@@ -1094,7 +1094,7 @@ select:focus {
 }
 
 .modal {
-    z-index: 9999999999;
+    z-index: 9999;
     color: #4DC3F4;
 }
 
@@ -1152,7 +1152,7 @@ select:focus {
 }
 
 .modal-backdrop {
-    z-index: 99999999;
+    z-index: 999;
 }
 
 .artist-modal-image {
@@ -1432,7 +1432,35 @@ select:focus {
 }
 
 .connect-wallet {
+    border: 1px solid #057e29;
+    border-radius: 10px;
+    padding: 10px;
     text-align: center;
+    cursor: pointer;
+    
+}
+
+.connect-wallet:hover {
+    border: 1px solid #057e29;
+    background-color: #057e29;
+    transition: 1s;
+    text-shadow: 2px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wallet-modal__list__item {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted rgb(48, 47, 47);
+    margin-bottom: 5px;
+
 }
 
 .mint-row{

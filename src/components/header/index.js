@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Wallet from "../../components/wallet";
+import WalletConnect from "../../components/wallet/walletconnect";
 
 const Logo = 'images/logo.png';
 
@@ -26,7 +27,7 @@ function Header() {
                         <li className=""><Link to="/mint">Mint</Link></li>
                         {/* <li className=""><Wallet /></li> */}
                     </ul>
-                    <div> <Wallet /></div>
+                    <div> <WalletConnect /></div>
                 </div>
                 <button className="navbar-toggler" id="navoverlay" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
