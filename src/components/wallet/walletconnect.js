@@ -5,6 +5,8 @@ import { wallets } from './constants'
 import { useState, useContext, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { injected, walletconnector, bsc } from '../../utils/connector'
+import {Buffer} from 'buffer';
+Buffer.from('anything','base64');
 
 const Cancel = 'images/cancel.svg'
 
@@ -50,12 +52,15 @@ const WalletConnect = () => {
 
   const handleLogin = (wname) => {
     if (wname === 'Wallet Connect') { 
-      console.log(walletconnector)
-      activate(walletconnector)
+        activate(walletconnector, async (error) => {
+          console.log(error);
+        })
     } else if (wname === 'Binance Wallet') {
       activate(bsc)
     } else {
-      activate(injected)
+      activate(injected, async (error) => {
+        console.log(error);
+      })
     }
     setOpen(false)
   }
