@@ -23,7 +23,7 @@ function Header() {
                     </button>
                     <ul className="navbar-nav ms-auto">
                         <li className=""><Link to="/">Home</Link></li>
-                        <li className=""><Link to="/shop">Shop</Link></li>
+                        {/* <li className=""><Link to="/shop">Shop</Link></li> */}
                         <li className=""><Link to="/mint">Mint</Link></li>
                         {/* <li className=""><Wallet /></li> */}
                     </ul>

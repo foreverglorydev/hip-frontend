@@ -921,7 +921,7 @@ select:focus {
 
 .about .container {
     position: relative;
-    z-index: 99;
+    /* z-index: 99; */
 }
 
 .about-content p {
@@ -993,7 +993,7 @@ select:focus {
     width: 3px;
     height: 100%;
     background: linear-gradient(180deg, #43B1DF 0%, #0D5B95 101.19%);
-    z-index: 9;
+    z-index: 1;
 }
 
 .section-seperater.right::after {

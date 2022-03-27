@@ -29,9 +29,11 @@ const WalletConnect = () => {
   }
 
   Modal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.6)'
+  Modal.defaultStyles.overlay.zIndex = "1000000"
 
   const [isOpen, setOpen] = useState(false)
-  const { account, activate, deactivate } = useWeb3React()
+  const { account, chainId, activate, deactivate } = useWeb3React();
+  const supportNetworkId = 4;
 
   const walletModalOpen = async () => {
     setOpen(true)
@@ -50,20 +52,48 @@ const WalletConnect = () => {
     setOpen(false)
   }
 
-  const handleLogin = (wname) => {
+  const handleLogin = async (wname) => {
+
     if (wname === 'Wallet Connect') { 
-        activate(walletconnector, async (error) => {
-          console.log(error);
-        })
+      activate(walletconnector);
     } else if (wname === 'Binance Wallet') {
       activate(bsc)
     } else {
-      activate(injected, async (error) => {
-        console.log(error);
-      })
+      await activate(injected);
     }
     setOpen(false)
   }
+
+  useEffect(() => {
+		(async () => {
+			if (account && chainId ) {
+            // if(supportNetworkId !== chainId)
+            // {
+            //   alert("Sorry, You are not in rinkeby now. Please try again after change your network. Thank you !");
+            //   deactivate();
+            // }
+              
+
+        if (supportNetworkId !== chainId) {
+          if(window.confirm("Your current Network is unsupportable. Would you like to change it") == true)
+          {
+            console.log(supportNetworkId.toString(16));
+            try {
+              await window.ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                  params: [{ chainId: '0x' + supportNetworkId.toString(16)}],
+                });
+            } catch (switchError) {
+              // This error code indicates that the chain has not been added to MetaMask.
+              if (switchError.code === 4902) {
+                alert('add this chain id')
+              }
+            }
+          }
+        }
+			}
+		})();
+	},[chainId, account]);
 
   return (
     <>

@@ -39,8 +39,8 @@ function Faq() {
                 duration={500}
                 collapsed={true}
                 whenReversedUseBackwardEase={false}
-                render={({ toggle, setCollapsibleElement }) => (
-                  <div>
+                render={({ toggle, setCollapsibleElement, toggleState }) => (
+                  <div className = {toggleState == 'EXPANDED' ? 'open':''}>
                     <h4 className="js-accordion-toggle" onClick={toggle}>{item.title}</h4>
                     <div className="card-body p-0" ref={setCollapsibleElement}>
                       <div className="p-4 faq-content">
