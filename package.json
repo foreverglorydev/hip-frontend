@@ -16,7 +16,7 @@
     "react-scripts": "5.0.0",
     "react-slick": "^0.28.1",
     "react-slide-toggle": "^0.3.5",
-    "walletconnect": "^1.7.1",
+    "walletconnect": "^1.7.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
