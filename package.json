@@ -7,7 +7,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
-    "ethers": "^5.5.4",
+    "ethers": "^5.7.2",
     "node-gyp": "^8.4.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
