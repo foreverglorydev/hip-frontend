@@ -3,8 +3,8 @@ import { Container, Button } from 'react-bootstrap'
 import Modal from 'react-modal'
 import { wallets } from './constants'
 import { useState, useContext, useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
-import { injected, walletconnector, bsc } from '../../utils/connector'
+import { useWeb3React } from '@web3-react/core';
+import { injected, walletconnector, bsc } from '../../utils/connector';
 import {Buffer} from 'buffer';
 Buffer.from('anything','base64');
 
@@ -33,7 +33,7 @@ const WalletConnect = () => {
 
   const [isOpen, setOpen] = useState(false)
   const { account, chainId, activate, deactivate } = useWeb3React();
-  const supportNetworkId = 4;
+  const supportNetworkId = 5;
 
   const walletModalOpen = async () => {
     setOpen(true)

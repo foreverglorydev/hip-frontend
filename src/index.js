@@ -10,7 +10,6 @@ render(
   <React.StrictMode>
     <Web3ReactProvider getLibrary={getLibrary}>
       <App />
-      {/* <WalletConnect/> */}
     </Web3ReactProvider>
   </React.StrictMode>,
   document.getElementById('root'),
